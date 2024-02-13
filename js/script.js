@@ -60,3 +60,25 @@ for(let i = 0; i < team.length; i++) {
     }
 
 }
+
+// MILESTONE 2:
+// Stampare le stesse informazioni su DOM sottoforma di stringhe
+
+// memorizzo in una costante l'elemento <ul> nel DOM
+const listElement = document.querySelector("ul");
+
+for(let i = 0; i < team.length; i++) {
+
+    // membro del team attuale
+    const actualTeamMember = team[i];
+    // creo un elemento della lista
+    const newListElement = document.createElement("li");
+
+    // per ogni oggetto, attraverso un ciclo for-in stampo tutte le informazioni dello stesso
+    for(let key in actualTeamMember) {
+        newListElement.innerHTML += `${key}: ${actualTeamMember[key]} <br>`;
+    }
+
+    listElement.append(newListElement);
+
+}
