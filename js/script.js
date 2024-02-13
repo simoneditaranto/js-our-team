@@ -61,8 +61,11 @@ for(let i = 0; i < team.length; i++) {
 
 }
 
+
 // MILESTONE 2:
 // Stampare le stesse informazioni su DOM sottoforma di stringhe
+// BONUS 1:
+// Trasformare la stringa foto in una immagine effettiva
 
 // memorizzo in una costante l'elemento <ul> nel DOM
 const listElement = document.querySelector("ul");
@@ -71,14 +74,29 @@ for(let i = 0; i < team.length; i++) {
 
     // membro del team attuale
     const actualTeamMember = team[i];
+    // console.log("actualmember", actualTeamMember);
+
     // creo un elemento della lista
     const newListElement = document.createElement("li");
+    listElement.append(newListElement);
+
+    // creo un elemento per le informazioni
+    const newInfoElement = document.createElement("div");
+    newListElement.append(newInfoElement);
+    // creo un elemento per l'immagine
+    const imgElement = document.createElement("img");
+    newListElement.append(imgElement);
 
     // per ogni oggetto, attraverso un ciclo for-in stampo tutte le informazioni dello stesso
     for(let key in actualTeamMember) {
-        newListElement.innerHTML += `${key}: ${actualTeamMember[key]} <br>`;
+        // se incontro la chiave "foto"
+        if(key == "foto") {
+            // prendo l'elemento immagine e inserisco come src il valore della proprietà
+            imgElement.src = `./img/${actualTeamMember[key]}`;
+        } else {
+            // prendo l'elemento delle info e ci aggiungo i valori delle proprietà delle altre chiavi
+            newInfoElement.innerHTML += `${key}: ${actualTeamMember [key]} <br>`;
+        }
     }
-
-    listElement.append(newListElement);
 
 }
