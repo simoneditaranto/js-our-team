@@ -80,13 +80,14 @@ for(let i = 0; i < team.length; i++) {
     const newListElement = document.createElement("li");
     listElement.append(newListElement);
 
-    // creo un elemento per le informazioni
-    const newInfoElement = document.createElement("div");
-    newListElement.append(newInfoElement);
     // creo un elemento per l'immagine
     const imgElement = document.createElement("img");
     newListElement.append(imgElement);
 
+    // creo un elemento per le informazioni
+    const newInfoElement = document.createElement("div");
+    newListElement.append(newInfoElement);
+    
     // per ogni oggetto, attraverso un ciclo for-in stampo tutte le informazioni dello stesso
     for(let key in actualTeamMember) {
         // se incontro la chiave "foto"
@@ -95,7 +96,7 @@ for(let i = 0; i < team.length; i++) {
             imgElement.src = `./img/${actualTeamMember[key]}`;
         } else {
             // prendo l'elemento delle info e ci aggiungo i valori delle proprietà delle altre chiavi
-            newInfoElement.innerHTML += `${key}: ${actualTeamMember [key]} <br>`;
+            newInfoElement.innerHTML += `${actualTeamMember [key]} <br>`;
         }
     }
 
