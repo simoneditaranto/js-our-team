@@ -44,5 +44,19 @@ const team = [
     }
 ];
 
-console.log(team);
-// test
+
+// MILESTONE 1:
+// Stampare su console, per ogni membro del team, le informazioni di nome, ruolo e la stringa della foto
+
+// attraverso un ciclo for itero ogni elemento del mio array
+for(let i = 0; i < team.length; i++) {
+
+    // membro del team attuale
+    const actualTeamMember = team[i];
+
+    // per ogni oggetto, attraverso un ciclo for-in stampo tutte le informazioni dello stesso
+    for(let key in actualTeamMember) {
+        console.log(key + ": " + actualTeamMember[key]);
+    }
+
+}
