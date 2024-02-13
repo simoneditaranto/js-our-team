@@ -78,15 +78,23 @@ for(let i = 0; i < team.length; i++) {
 
     // creo un elemento della lista
     const newListElement = document.createElement("li");
+    // listElement.classList.add("col-4");
     listElement.append(newListElement);
+
+    // creo una card
+    const cardElement = document.createElement("div");
+    cardElement.classList.add("card");
+    cardElement.style.width = "18rem";
+    listElement.append(cardElement);
 
     // creo un elemento per l'immagine
     const imgElement = document.createElement("img");
-    newListElement.append(imgElement);
+    cardElement.append(imgElement);
 
     // creo un elemento per le informazioni
     const newInfoElement = document.createElement("div");
-    newListElement.append(newInfoElement);
+    newInfoElement.classList.add("card-body");
+    cardElement.append(newInfoElement);
     
     // per ogni oggetto, attraverso un ciclo for-in stampo tutte le informazioni dello stesso
     for(let key in actualTeamMember) {
@@ -101,3 +109,5 @@ for(let i = 0; i < team.length; i++) {
     }
 
 }
+
+
